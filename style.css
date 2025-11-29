@@ -556,3 +556,43 @@ main {
               0 3px 8px rgba(0, 0, 0, 0.04);
   border-color: rgba(0, 0, 0, 0.08);
 }
+
+/* --- Premium Hero Gradient Upgrade --- */
+
+.lo-hero {
+  background: linear-gradient(
+      180deg,
+      #02081a 0%,
+      #07172b 40%,
+      #030712 100%
+    );
+  padding-top: 100px;
+  padding-bottom: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft glow behind hero text */
+.lo-hero::before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(
+    circle,
+    rgba(66, 153, 225, 0.15) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Keep hero text above glow */
+.lo-hero-text,
+.lo-hero-card {
+  position: relative;
+  z-index: 2;
+}
