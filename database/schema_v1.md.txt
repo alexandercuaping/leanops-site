@@ -1,0 +1,88 @@
+# LeanOps — Supabase Schema v1 (Draft)
+*Lightweight MES schema for stations, jobs, assignments, and performance tracking.*
+
+---
+
+## 1️⃣ Table: stations  
+Represents every workstation on the production floor.
+
+| Column       | Type     | Notes |
+|--------------|----------|-------|
+| id           | text (PK) | Example: "ST-01" |
+| name         | text     | Human-readable station name |
+| line         | text     | Line A, Line B, etc. |
+| status       | text     | running / idle / blocked |
+| is_active    | boolean  | Whether station is in use |
+| created_at   | timestamp | default: now() |
+
+---
+
+## 2️⃣ Table: jobs  
+Every job that exists in the system: past, present, or waiting in queue.
+
+| Column       | Type     | Notes |
+|--------------|----------|-------|
+| id           | text (PK) | Example: "JOB-1004" |
+| part_name    | text     | Part / Product name |
+| qty_total    | integer  | Total units required |
+| due_date     | date     | Due date |
+| priority     | text     | normal / high |
+| status       | text     | waiting / running / completed |
+| created_at   | timestamp | default: now() |
+
+---
+
+## 3️⃣ Table: station_assignments  
+Tracks which station is working on which job *right now*.
+
+| Column        | Type      | Notes |
+|---------------|-----------|-------|
+| id            | uuid (PK) | default uuid_generate_v4() |
+| station_id    | text (FK → stations.id) | |
+| job_id        | text (FK → jobs.id)     | |
+| qty_done      | integer   | Current units completed |
+| started_at    | timestamp | When job began at station |
+| updated_at    | timestamp | Auto-updates for real-time |
+
+---
+
+## 4️⃣ Table: performance_logs  
+A permanent log of work being done over time.
+
+| Column         | Type      | Notes |
+|----------------|-----------|--------|
+| id             | uuid (PK) | |
+| station_id     | text      | FK optional |
+| job_id         | text      | FK optional |
+| qty_completed  | integer   | Units completed at that time |
+| timestamp      | timestamp | default now() |
+
+---
+
+## 5️⃣ Table: events_log  *(optional but powerful)*  
+Central event tracker for all MES actions.
+
+| Column      | Type      | Notes |
+|-------------|-----------|--------|
+| id          | uuid (PK) |
+| event_type  | text      | "job_assigned", "job_completed", etc. |
+| station_id  | text      | |
+| job_id      | text      | |
+| meta        | jsonb     | Flexible payload |
+| timestamp   | timestamp | default now() |
+
+---
+
+## 6️⃣ Table: users  *(for login + roles later)*
+
+| Column       | Type      | Notes |
+|--------------|-----------|--------|
+| id           | uuid (PK) | Supabase auth-managed |
+| email        | text      | Unique |
+| role         | text      | supervisor / operator / admin |
+| created_at   | timestamp | |
+
+---
+
+## 🔗 Entity Relationship Summary
+
