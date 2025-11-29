@@ -497,3 +497,43 @@ main {
     padding-inline: 20px;
   }
 }
+
+/* --- Typography harmonization for cards --- */
+
+/* Make card titles look like section headers */
+.lo-card h3,
+.lo-card-soft h3 {
+  font-family: "Georgia", "Times New Roman", serif;
+  letter-spacing: 0.02em;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+/* Make all text inside cards feel consistent and calm */
+.lo-card p,
+.lo-card-soft p,
+.lo-card li {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Tighter, more consistent section rhythm */
+.lo-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* Give blocks a little extra air on mobile */
+@media (max-width: 768px) {
+  .lo-section {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  .lo-card,
+  .lo-card-soft {
+    padding: 18px 18px;
+  }
+}
