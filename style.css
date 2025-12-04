@@ -652,3 +652,59 @@ main {
     0 28px 60px rgba(0, 0, 0, 0.75),
     0 0 30px rgba(255, 255, 255, 0.08);
 }
+
+/* --- Pricing & positioning extras --- */
+
+.lo-section-intro {
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  text-align: center;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--lo-muted, #9ca3af);
+}
+
+.lo-section-note {
+  max-width: 720px;
+  margin: 2rem auto 0;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--lo-muted, #9ca3af);
+}
+
+.lo-price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 0.35rem;
+  color: var(--lo-accent, #f97316);
+}
+
+.lo-price span {
+  font-size: 0.85rem;
+  font-weight: 400;
+  opacity: 0.85;
+  margin-left: 0.25rem;
+  color: inherit;
+}
+
+.lo-price-note {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--lo-muted, #9ca3af);
+}
+
+#pricing .lo-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+#pricing .lo-card ul {
+  margin-top: 0.75rem;
+}
+
+#pricing .lo-card h3 {
+  margin-bottom: 0.35rem;
+}
