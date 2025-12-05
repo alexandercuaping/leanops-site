@@ -673,6 +673,34 @@ main {
   color: var(--lo-muted, #9ca3af);
 }
 
+/* ---------- Supervisor dashboard demo ---------- */
+
+.lo-section-demo {
+  /* uses same base styling as .lo-section, just a tiny tweak to spacing */
+}
+
+.lo-demo-frame {
+  margin-top: 1.5rem;
+  background: #020617; /* dark frame to match the actual dashboard */
+  border-radius: 18px;
+  padding: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.45);
+  box-shadow: 0 22px 45px rgba(15, 23, 42, 0.55);
+}
+
+.lo-demo-frame img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.lo-demo-frame figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
 .lo-price {
   font-size: 1.8rem;
   font-weight: 700;
@@ -707,4 +735,32 @@ main {
 
 #pricing .lo-card h3 {
   margin-bottom: 0.35rem;
+}
+
+/* ---------- Supervisor dashboard demo ---------- */
+
+.lo-section-demo {
+  /* uses same base styling as .lo-section, just a tiny tweak to spacing */
+}
+
+.lo-demo-frame {
+  margin-top: 1.5rem;
+  background: #020617; /* dark frame to match the actual dashboard */
+  border-radius: 18px;
+  padding: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.45);
+  box-shadow: 0 22px 45px rgba(15, 23, 42, 0.55);
+}
+
+.lo-demo-frame img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.lo-demo-frame figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-muted);
 }
